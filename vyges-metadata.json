@@ -1,0 +1,152 @@
+{
+  "$schema": "https://vyges.com/schema/v1/vyges-metadata.schema.json",
+  "x-version": "1.0.0",
+  "name": "sky130-potentiometric-dac",
+  "version": "0.1.0",
+  "description": "A 10-bit potentiometric digital-to-analog converter (DAC) designed for 3.3V operation in the SKY130 process node.",
+  "license": "Apache-2.0",
+  "maturity": "rtl_verified",
+  "target": [
+    "asic"
+  ],
+  "design_type": [
+    "analog",
+    "mixed-signal"
+  ],
+  "created": "2026-04-01T05:14:40Z",
+  "updated": "2026-04-01T05:14:40Z",
+  "source": {
+    "type": "git",
+    "url": "https://github.com/vsdip/avsddac_3v3_sky130_v2",
+    "commit": "45a035b14e63c082c15933d90b973491d153ad3b",
+    "ip_path": ".",
+    "private": false,
+    "containsEncryptedPayload": false,
+    "indexing": true
+  },
+  "maintainers": [
+    {
+      "name": "Vyges",
+      "email": "team@vyges.com",
+      "url": "https://vyges.com",
+      "github": "vyges"
+    }
+  ],
+  "interfaces": [
+    {
+      "type": "bus",
+      "direction": "input",
+      "protocol": "custom",
+      "port": "digital_input",
+      "width": 10,
+      "description": "10-bit digital input for the DAC."
+    },
+    {
+      "type": "analog",
+      "direction": "output",
+      "protocol": "custom",
+      "port": "analog_output",
+      "width": 1,
+      "description": "Analog output voltage corresponding to the digital input."
+    },
+    {
+      "type": "power",
+      "direction": "input",
+      "protocol": "custom",
+      "port": "vdd",
+      "width": 1,
+      "description": "Power supply input (3.3V)."
+    },
+    {
+      "type": "ground",
+      "direction": "input",
+      "protocol": "custom",
+      "port": "vss",
+      "width": 1,
+      "description": "Ground connection."
+    }
+  ],
+  "parameters": [
+    {
+      "name": "resolution",
+      "type": "int",
+      "default": 10,
+      "description": "Resolution of the DAC in bits."
+    },
+    {
+      "name": "vdd_voltage",
+      "type": "float",
+      "default": 3.3,
+      "description": "Operating voltage for the DAC."
+    }
+  ],
+  "performance": {
+    "resolution_bits": 10,
+    "supply_voltage": 3.3,
+    "output_range": "0V to VDD",
+    "power_consumption": "Low"
+  },
+  "architecture": {
+    "type": "peripheral",
+    "features": [
+      "10-bit resolution",
+      "Potentiometric DAC architecture",
+      "Designed for 3.3V operation",
+      "Optimized for SKY130 process node"
+    ]
+  },
+  "asic": {
+    "flavor": "analog",
+    "technology": [
+      "sky130A"
+    ]
+  },
+  "fpga": {
+    "toolchain": [],
+    "devices": []
+  },
+  "dependencies": [],
+  "test": {
+    "testbenches": [],
+    "status": "upstream_passing",
+    "coverage": "functional"
+  },
+  "documentation": {
+    "upstream": "https://github.com/vsdip/avsddac_3v3_sky130_v2"
+  },
+  "artifacts": {
+    "total_rtl_lines": 0
+  },
+  "categories": [
+    {
+      "main_category": "Analog & Mixed-Signal",
+      "sub_category": "Converters"
+    }
+  ],
+  "keywords": [
+    "DAC",
+    "potentiometric",
+    "analog",
+    "mixed-signal",
+    "10-bit",
+    "SKY130"
+  ],
+  "trust": {
+    "verification_level": "simulation_passing",
+    "tapeout_count": 0,
+    "fpga_validated": false,
+    "formal_verified": false,
+    "maintained": true,
+    "last_activity": "2026-04-01"
+  },
+  "meta": {
+    "template": {
+      "generator": "github-models-ai",
+      "template_version": "1.0.0",
+      "generated_at": "2026-04-01T05:14:40Z"
+    },
+    "schema": {
+      "version": "1.0.0"
+    }
+  }
+}
